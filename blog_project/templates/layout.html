@@ -1,0 +1,40 @@
+{% load static %}
+{% load tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}ThoughtFlow{% endblock %}
+    </title>
+
+    {% tailwind_css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="{% static 'js/index.js' %}"></script>
+
+    {% comment %} <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+    
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+    
+            closeMobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    
+    </script> {% endcomment %}
+</body>
+</html>
